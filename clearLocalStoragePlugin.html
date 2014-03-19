@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <style type='text/css'>
+      h1, h2, h3, h4, h5, h6, div, p {
+        font-family: 'Raleway', Arial, sans-serif;
+      }
+      a, a:visited {
+        text-decoration: none;
+        color: #444;
+        font-weight: 700;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
     <script src="lib/plugin.js"></script>
     <meta charset="UTF-8" />
     <title>Clear Local Storage Plugin</title>
@@ -27,6 +41,10 @@
     </script>
   </head>
   <body>
-    <h1>Shell Plugin for Orion to clear HTML5 Local Storage</h1>
+    <h1>Orion Plugin to Clear HTML5 Local Storage</h1>
+    <p>This plugin was developed for the <a href="http://www.orionhub.org">Orion</a> Node server.</p> 
+    <p>The plugin adds a link in the shell side menu that clears the browser's local storage.</p>
+    <img src="img/orion-plugin.png" />
+    <p>Since some Orion Node information is stored in local storage, clearing it allows an Orion developer to see changes more easily.</p>
   </body>
 </html>

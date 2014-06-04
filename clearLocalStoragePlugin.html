@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <style type='text/css'>
+      h1, h2, h3, h4, h5, h6, div, p {
+        font-family: 'Raleway', Arial, sans-serif;
+      }
+      a, a:visited {
+        text-decoration: none;
+        color: #444;
+        font-weight: 700;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+    <script src="lib/plugin.js"></script>
+    <meta charset="UTF-8" />
+    <title>Clear Local Storage Plugin</title>
+    <script>
+      var headers = { name: "Clear Local Storage", 
+        version: "0.1", 
+        description: "This plugin clears HTML5 local storage; it is intended for developers contributing to Orion, so they can more easily see their changes."};
+      var provider = new orion.PluginProvider(headers);
+      var serviceImpl = { };
+      provider.registerService("orion.navigate.command", {}, {
+        nameKey: "Clear Local Storage",
+        id: "eclipse.clear.local.storage.open",
+        tooltipKey: "Open Clear Local Storage page",
+        nls: "orion/ttyshell/nls/messages",
+        uriTemplate: "javascript:localStorage.clear(); alert('Your local storage was cleared.');",
+        forceSingleItem: true
+      });
+      provider.registerService("orion.page.link.related", null, {
+        id: "eclipse.clear.local.storage.open",
+        category: "shell",
+	order: 15 //Last link in Shell category
+      });
+      provider.connect(); 
+    </script>
+  </head>
+  <body>
+    <h1>Orion Plugin to Clear HTML5 Local Storage</h1>
+    <p>This plugin was developed for the <a href="http://www.orionhub.org">Orion</a> Node server.</p> 
+    <p>The plugin adds a link in the shell side menu that clears the browser's local storage.</p>
+    <img src="img/orion-plugin.png" />
+    <p>Since some Orion Node information is stored in local storage, clearing it allows an Orion developer to see changes more easily.</p>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49099672-1', 'kaitlinhuben.github.io');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
